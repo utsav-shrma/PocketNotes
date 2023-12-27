@@ -1,0 +1,50 @@
+#list-of-groups {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20vw;
+  padding: 10px;
+  margin: 0px;
+}
+
+#list-icon {
+    height: 69px;
+    width: 69px;
+    border-radius: 50%;
+    color: white;
+    background-color:#0047FF;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+font-size: 24px;
+font-weight: 500;
+line-height: 23px;
+letter-spacing: 0.02em;
+text-align: left;
+
+margin-right: 30px;
+
+
+    
+    
+}
+
+#list-title {
+  font-family: Roboto;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+#list-of-groups:hover{
+    background: #2F2F2F2B;
+    border-radius: 10px;
+} 
