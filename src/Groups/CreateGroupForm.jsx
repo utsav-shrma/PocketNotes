@@ -1,28 +1,57 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import './CreateGroupForm.css'
-
+import { useSelector, useDispatch } from 'react-redux'
+import { setFormInputTitle,setFormInputColor,resetForm,setformPopUpFlag } from '../features/utility/utility';
+import { addNoteGroup } from '../features/noteGroups/noteGroupSlice';
 function CreateGroupForm() {
+
+    const dispatch = useDispatch();
+    let currentFormInput = useSelector((state) => state.utility.formInput)
+    let titleInputHandler=(e)=>{
+        dispatch(setFormInputTitle(e.target.value));
+    };
+
+    let radioChangeHandler=(e)=>{ 
+        dispatch(setFormInputColor(e.target.value));
+
+    };
+
+    let createNewGroup=()=>{
+       
+        dispatch(addNoteGroup(currentFormInput));
+        dispatch(resetForm());
+        dispatch(setformPopUpFlag(false));
+        
+    };
+
   return (
     <div id="group-form-container">
     <div id='group-form'>
         <div id="form-container">
+            
             <h1>Create New Group</h1>
+
+           
             <div id="group-name">
+
                 <h1>Group Name</h1> 
-                <textarea placeholder='Enter group name'></textarea>
+
+                <textarea placeholder='Enter group name' value={currentFormInput.title} onChange={titleInputHandler}></textarea>
             </div>
             <div id="choose-color">
                 <h1> Choose Color</h1> 
                 <div id="color-pallete-container">
-                    <div id="color-1" className='color-pallete'></div>
-                    <div id="color-2" className='color-pallete'></div>
-                    <div id="color-3" className='color-pallete'></div>
-                    <div id="color-4" className='color-pallete'></div>
-                    <div id="color-5" className='color-pallete'></div>
-                    <div id="color-6" className='color-pallete'></div>
+                    <input onChange={radioChangeHandler} name="colorChoice" type="radio" id="color-1" value="#B38BFA" className='color-pallete'></input>
+                    <input onChange={radioChangeHandler} name="colorChoice" type="radio" id="color-2"  value="#FF79F2" className='color-pallete'></input>
+                    <input onChange={radioChangeHandler} name="colorChoice" type="radio" id="color-3"  value="#43E6FC"className='color-pallete'></input>
+                    <input onChange={radioChangeHandler} name="colorChoice" id="color-4" type="radio"  value="#F19576"className='color-pallete'></input>
+                    <input onChange={radioChangeHandler} name="colorChoice" id="color-5" type="radio"  value="#0047FF"className='color-pallete'></input>
+                    <input onChange={radioChangeHandler} name="colorChoice" id="color-6" type="radio"  value="#6691FF"className='color-pallete'></input>
                 </div>
             </div>
-            <div id="create-button-div"> <button id="create-button">  Create </button></div>
+            
+            <div id="create-button-div"> <button id="create-button" onClick={createNewGroup}>  Create </button></div>
+            
         </div>
        
         

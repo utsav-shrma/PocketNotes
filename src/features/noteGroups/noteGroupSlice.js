@@ -24,36 +24,35 @@ const initialState = {
   
 //   ]
   
-
+let findTitleAbbrv=(title)=>{
+  const myArray = title.split(" ");
+  let abbrv="";
+  for(let i=0;i<2 && i<myArray.length;i++){
+      abbrv+=myArray[i][0].toUpperCase();
+  }
+  
+  return abbrv;
+}
 export const noteGroupSlice = createSlice({
   name: 'noteGroups',
   initialState,
   reducers: {
 
     addNoteGroup:(state,action)=>{
-      state.noteGroup.push(action.payload);
-      
-      // console.log(action.payload );
-      // console.log(state.noteGroup);
+      let formInput={...action.payload};
+      formInput.id=state.noteGroup.length;
+      formInput.abbrv=findTitleAbbrv(formInput.title);
+      state.noteGroup.push(formInput);
+
+
     },
 
     addNote:(state,action)=>{
-      state.noteGroup[action.payload.index].push[action.payload.noteObj];
-    }
+      state.noteGroup[action.payload.id].push[action.payload.noteObj];
+    },
 
-    // increment: (state) => {
-    //   // Redux Toolkit allows us to write "mutating" logic in reducers. It
-    //   // doesn't actually mutate the state because it uses the Immer library,
-    //   // which detects changes to a "draft state" and produces a brand new
-    //   // immutable state based off those changes
-    //   state.value += 1
-    // },
-    // decrement: (state) => {
-    //   state.value -= 1
-    // },
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload
-    // },
+   
+
   },
 })
 
