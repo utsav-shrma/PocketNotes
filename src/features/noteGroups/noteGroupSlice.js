@@ -4,27 +4,8 @@ const initialState = {
   noteGroup: [],
 
 }
-// { groupTitle:"",
-//             logo:"",
-//             color:"",
-//           notes:[]}
-// let noteObj={noteContent:"",date:"",time:""}
-// noteGroups:[
-//   {
-//     id,
-//     groupTitle,
-//     logo,
-//     color,
-//     [{	id,
-//       noteContent,
-//       date,
-//       time
-//     },{}]
-//   },{}
   
-//   ]
-  
-let findTitleAbbrv=(title)=>{
+const findTitleAbbrv=(title)=>{
   const myArray = title.split(" ");
   let abbrv="";
   for(let i=0;i<2 && i<myArray.length;i++){

@@ -7,7 +7,7 @@ const initialState = {
         color:"",
         notes:[],
     },
-    currNoteGroupId:null,
+    currNoteGroupId:-1,
     formPopUpFlag:false,
     noteContent:"",
 

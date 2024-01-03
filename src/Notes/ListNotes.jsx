@@ -4,14 +4,13 @@ import NotesView from './NotesView'
 import { useSelector, useDispatch } from 'react-redux'
 function ListNotes() {
   let currGroupId = useSelector((state) => state.utility.currNoteGroupId);
-  let currGroup=useSelector((state) => state.noteGroups.noteGroup);
   
 
   return (
     
     <div id="notes-container">
      
-     {currGroupId!=null  ?<NotesView></NotesView>:<EmptyView></EmptyView>}
+     {currGroupId!=-1  ?<NotesView></NotesView>:<EmptyView></EmptyView>}
     
     
     </div>
