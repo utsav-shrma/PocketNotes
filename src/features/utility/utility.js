@@ -5,9 +5,11 @@ const initialState = {
         id:"",
         title:"",
         color:"",
+        notes:[],
     },
     currNoteGroupId:null,
     formPopUpFlag:false,
+    noteContent:"",
 
 
 
@@ -27,7 +29,7 @@ export const utilitySlice = createSlice({
         state.formInput.color=action.payload;
     },
     resetForm:(state)=>{
-        state.formInput={ id:"",title:"", color:""};
+        state.formInput={ id:"",title:"", color:"",notes:[]};
     },
     setformPopUpFlag:(state,action)=>{
         state.formPopUpFlag=action.payload;
@@ -35,11 +37,17 @@ export const utilitySlice = createSlice({
     setCurrNoteGroupId:(state,action)=>{
         state.currNoteGroupId=action.payload;
     },
+    setNoteContent:(state,action)=>{
+        state.noteContent=action.payload;
+    },
+    resetNoteContent:(state)=>{
+        state.noteContent="";
+    },
 
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setFormInputTitle,setFormInputColor,resetForm,setformPopUpFlag,setCurrNoteGroupId } = utilitySlice.actions
+export const { setFormInputTitle,setFormInputColor,resetForm,setformPopUpFlag,setCurrNoteGroupId,setNoteContent,resetNoteContent } = utilitySlice.actions
 
 export default utilitySlice.reducer

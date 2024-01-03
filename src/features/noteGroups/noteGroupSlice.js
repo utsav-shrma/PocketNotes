@@ -48,7 +48,7 @@ export const noteGroupSlice = createSlice({
     },
 
     addNote:(state,action)=>{
-      state.noteGroup[action.payload.id].push[action.payload.noteObj];
+      state.noteGroup[action.payload.id].notes.push(action.payload.noteObj);
     },
 
    

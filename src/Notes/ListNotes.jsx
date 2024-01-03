@@ -11,7 +11,7 @@ function ListNotes() {
     
     <div id="notes-container">
      
-     {currGroup[currGroupId] && currGroup[currGroupId].length>0 ?<NotesView></NotesView>:<EmptyView></EmptyView>}
+     {currGroupId!=null  ?<NotesView></NotesView>:<EmptyView></EmptyView>}
     
     
     </div>
