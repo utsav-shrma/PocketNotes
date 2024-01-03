@@ -31,7 +31,7 @@ function NotesView() {
   return (
     <div id="list-view-conatiner" >
         <div id="list-view-header">
-          <div id="notes-group-logo">{currGroup.abbrv}</div>
+          <div id="notes-group-logo" style={{backgroundColor:currGroup.color}}>{currGroup.abbrv}</div>
           <p id="notes-group-title">{currGroup.title}</p>
         </div>
         
