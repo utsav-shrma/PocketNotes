@@ -10,6 +10,8 @@ const initialState = {
     currNoteGroupId:-1,
     formPopUpFlag:false,
     noteContent:"",
+    isMobileView:false, 
+    isGroupView:true,
 
 
 
@@ -43,11 +45,17 @@ export const utilitySlice = createSlice({
     resetNoteContent:(state)=>{
         state.noteContent="";
     },
+    setMobileView:(state,action)=>{
+        state.isMobileView=action.payload;
+    },
+    setGroupView:(state,action)=>{
+        state.isGroupView=action.payload;
+    },
 
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { setFormInputTitle,setFormInputColor,resetForm,setformPopUpFlag,setCurrNoteGroupId,setNoteContent,resetNoteContent } = utilitySlice.actions
+export const { setFormInputTitle,setFormInputColor,resetForm,setformPopUpFlag,setCurrNoteGroupId,setNoteContent,resetNoteContent ,setMobileView,setGroupView} = utilitySlice.actions
 
 export default utilitySlice.reducer

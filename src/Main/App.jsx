@@ -1,23 +1,21 @@
-import { useState } from 'react'
-import './App.css'
-import ListNotes from '../Notes/ListNotes'
-import ListGroups from '../Groups/ListGroups'
-import CreateGroupForm from '../Groups/CreateGroupForm'
-import { useSelector, useDispatch } from 'react-redux'
-import { setformPopUpFlag } from '../features/utility/utility'
-
+import { useState } from "react";
+import "./App.css";
+import MobileView from "./MobileView";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import DesktopView from "./DesktopView";
+import ListNotes from "../Notes/ListNotes";
+import ListGroups from "../Groups/ListGroups";
 function App() {
-  let formPopUpFlag = useSelector((state) => state.utility.formPopUpFlag);
-  const dispatch = useDispatch()
-
   return (
-    <div id="main-container">
-      {formPopUpFlag?<CreateGroupForm></CreateGroupForm>:""}
-      
-      <ListGroups></ListGroups>
-      <ListNotes></ListNotes>
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<DesktopView />} />
+        <Route path="mobile" element={<MobileView />} />
+        <Route path="group" element={<ListGroups />} />
+        <Route path="note" element={<ListNotes />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

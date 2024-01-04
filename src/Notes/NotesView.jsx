@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { addNote } from '../features/noteGroups/noteGroupSlice'
 import NoteItem from './NoteItem'
 import { setNoteContent,resetNoteContent } from '../features/utility/utility'
+import { setGroupView } from '../features/utility/utility'
 
 function NotesView() {
   let currGroupId = useSelector((state) => state.utility.currNoteGroupId);
@@ -31,6 +32,7 @@ function NotesView() {
   return (
     <div id="list-view-conatiner" >
         <div id="list-view-header">
+        <button onClick={()=>{dispatch(setGroupView(true))}}id="back-arrow">&larr;</button>
           <div id="notes-group-logo" style={{backgroundColor:currGroup.color}}>{currGroup.abbrv}</div>
           <p id="notes-group-title">{currGroup.title}</p>
         </div>

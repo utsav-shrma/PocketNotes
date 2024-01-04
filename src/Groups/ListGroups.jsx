@@ -5,13 +5,17 @@ import GroupItems from './GroupItems'
 import { useSelector, useDispatch } from 'react-redux'
 import { addNoteGroup,addNote } from '../features/noteGroups/noteGroupSlice'
 import { setformPopUpFlag } from '../features/utility/utility'
+import CreateGroupForm from "../Groups/CreateGroupForm";
 function ListGroups() {
   let noteGroup = useSelector((state) => state.noteGroups.noteGroup);
-
+  let formPopUpFlag = useSelector((state) => state.utility.formPopUpFlag);
   const dispatch = useDispatch()
 
   return (
+    <>
+    {formPopUpFlag ? <CreateGroupForm></CreateGroupForm> : ""} 
     <div id="list-group-container">
+      
       <h1 id="list-group-container-heading">Pocket Notes</h1>
 
   {/* {console.log(noteGroups)} */}
@@ -27,6 +31,7 @@ function ListGroups() {
       <button id='add-Notes-Button' onClick={()=>{dispatch(setformPopUpFlag(true))}}>+</button>
 
     </div>
+    </>
   )
 }
 
