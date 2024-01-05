@@ -10,6 +10,7 @@
 #list-icon {
     height: 69px;
     width: 69px;
+    min-width: 69px;
     border-radius: 50%;
     color: white;
     background-color:#0047FF;
@@ -48,3 +49,11 @@ align-items: center;
     background: #2F2F2F2B;
     border-radius: 10px;
 } 
+
+
+@media (max-width: 800px) {
+  #list-of-groups{
+    width: 90vw;
+    
+    /* background-color: red; */}
+  }

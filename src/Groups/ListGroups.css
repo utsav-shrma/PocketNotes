@@ -71,3 +71,14 @@ text-align: left;
   display: none;
 }
 
+@media (max-width: 800px) {
+  #list-group-container{
+    width: 100vw;
+    /* background-color: red; */
+  }
+
+  #add-Notes-Button{
+    left:100vw;
+  }
+  
+}

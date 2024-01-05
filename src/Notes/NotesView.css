@@ -159,3 +159,29 @@ padding-top: 5px;
 
 
  }
+
+ 
+@media (max-width: 800px) {
+    #list-view-conatiner{
+      width: 100vw;
+      /* background-color: red; */
+    }
+    #list-view-header{
+        width: 100vw;
+    }
+    #text-input-container{
+        width: 100vw;
+    }
+    #input-area-and-button{
+        width: 95vw;
+    }
+    #input-area-and-button textarea{
+        width: 95vw;
+    }
+
+    #list-view-notes-container{
+        width: 95vw;
+    }
+
+    
+}

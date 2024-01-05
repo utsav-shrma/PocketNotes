@@ -43,3 +43,14 @@ padding-inline: 20px;
     display: flex;
     justify-content: flex-end;
 }
+
+
+@media (max-width: 800px) {
+    #individual-note {
+        width:90vw;
+    }
+    #date-time-container{
+        width:90vw;
+    }
+    /* #note-content{width: 90vw;} */
+}

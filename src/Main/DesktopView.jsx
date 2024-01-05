@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react'
-
+import React from 'react'
 import { useDispatch } from "react-redux";
 import './DesktopView.css'
 import { setMobileView } from '../features/utility/utility';
