@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { useDispatch } from "react-redux";
 import './DesktopView.css'
 import { setMobileView } from '../features/utility/utility';
@@ -8,7 +8,8 @@ import ListNotes from "../Notes/ListNotes";
 
 function DesktopView() {
     const dispatch=useDispatch();
-    dispatch(setMobileView(false));
+    useEffect(()=>{dispatch(setMobileView(false));},[]);
+    
     
   return (
     <div id="main-container">

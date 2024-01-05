@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import ListNotes from "../Notes/ListNotes";
 import ListGroups from "../Groups/ListGroups";
 
@@ -8,7 +8,8 @@ import { setMobileView,setGroupView } from '../features/utility/utility';
 function MobileView() {
     const dispatch=useDispatch();
     let isGroupView = useSelector((state) => state.utility.isGroupView);
-    dispatch(setMobileView(true));
+    useEffect(()=>{dispatch(setMobileView(true));},[]);
+    
 
   return (
     <div>
