@@ -216,8 +216,11 @@ padding-inline: 20px;
 
 }
 
-
+@media (max-width: 1144px) {
+    #group-name textarea{width: 50vw;}
+}
 @media (max-width: 800px) {
+    
     
     #form-container h1{
         font-family: Roboto;
@@ -229,6 +232,7 @@ padding-inline: 20px;
     padding: 0;
     margin: 0;
     margin: 10px;
+    margin-block: 5px;
     
     }
 
@@ -236,18 +240,19 @@ padding-inline: 20px;
         border: 2px solid #CCCCCC;
         resize: none;
         background :linear-gradient(0deg, #FFFFFF, #FFFFFF);
-    width: 27vw;
+    width: 50vw;
     
     height: 5vh;
     min-height: 50px;
     border-radius: 22px;
     
-    margin: 10px;
+    margin-block: 5px;
+    margin-inline: 0px;
     
     padding: 6px;
     
     font-family: Roboto;
-    font-size: 23px;
+    font-size: 15px;
     font-weight: 400;
     line-height: 37px;
     letter-spacing: 0.035em;
@@ -374,8 +379,19 @@ padding-inline: 20px;
     color: white;
     border-style: none;
     padding: 3px;
-    padding-inline: 10px;
+    padding-inline: 20px;
     
+    }
+    #create-button-div{
+        justify-content: center;
+        margin: 10px;
+
+    }
+    #form-container{
+        
+        padding: 20px;
+        width: 50vw;
+        
     }
 
     
