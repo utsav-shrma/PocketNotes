@@ -8,7 +8,14 @@ function CreateGroupForm() {
     const dispatch = useDispatch();
     let currentFormInput = useSelector((state) => state.utility.formInput)
     let titleInputHandler=(e)=>{
-        dispatch(setFormInputTitle(e.target.value));
+
+        if(e.target.value.length<30){
+            dispatch(setFormInputTitle(e.target.value));
+        }
+        else{
+            window.alert("Max Length!!");
+        }
+        
     };
 
     let radioChangeHandler=(e)=>{ 
@@ -17,16 +24,21 @@ function CreateGroupForm() {
     };
 
     let createNewGroup=()=>{
-       
-        dispatch(addNoteGroup(currentFormInput));
-        dispatch(resetForm());
-        dispatch(setformPopUpFlag(false));
+       if(currentFormInput.title.length==0 || currentFormInput.color===''){
+            window.alert('Can\'t be Empty');
+       }
+       else{
+            dispatch(addNoteGroup(currentFormInput));
+            dispatch(resetForm());
+            dispatch(setformPopUpFlag(false));
+       }
+        
         
     };
 
   return (
-    <div id="group-form-container">
-    <div id='group-form'>
+    <div id="group-form-container" onClick={()=>{dispatch(setformPopUpFlag(false)); dispatch(resetForm());}}>
+    <div id='group-form' onClick={(e)=>{ e.stopPropagation();}}>
         <div id="form-container">
             
             <h1>Create New Group</h1>

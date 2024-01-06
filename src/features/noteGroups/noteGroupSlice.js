@@ -9,7 +9,8 @@ const findTitleAbbrv=(title)=>{
   const myArray = title.split(" ");
   let abbrv="";
   for(let i=0;i<2 && i<myArray.length;i++){
-      abbrv+=myArray[i][0].toUpperCase();
+    if(isNaN(myArray[i][0])){abbrv+=myArray[i][0].toUpperCase();}
+      
   }
   
   return abbrv;
