@@ -8,10 +8,10 @@ import ListGroups from "../Groups/ListGroups";
 
 function DecideView() {
 
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [windowWidth, setWindowWidth] = useState(window.outerWidth);
 
   const handleResize = () => {
-    setWindowWidth(window.innerWidth);
+    setWindowWidth(window.outerWidth);
   };
 
   useEffect(() => {
